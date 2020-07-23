@@ -9,8 +9,8 @@ function getCell (x, y) {
     return document.querySelectorAll('[data-pos="' + Math.floor(x) + '-' + Math.floor(y) + '"]')[0]
 }
 function Game() {
-    this.FIELD_SIZE_X = 5;
-    this.FIELD_SIZE_Y = 5;
+    this.FIELD_SIZE_X = 20;
+    this.FIELD_SIZE_Y = 20;
     this.SNAKE_SIZE = 3;
     this.snake_speed = 300;
     this.WALLS_SPEED = 3000;
@@ -58,7 +58,6 @@ function Game() {
                 alert('GAME OVER');
             } else {
                 this.body.unshift(nextCell);
-                nextCell.classlist.add('head');
                 nextCell.classList.add('snake-cell');
                 this.endOfTail();
             }
@@ -164,9 +163,6 @@ function Game() {
         for (var i = 0; i < this.SNAKE_SIZE && startY + i < this.FIELD_SIZE_Y; i++) {
             var snakeCell = getCell(startX, startY + i);
             this.snake.body.push(snakeCell);
-            if(i == 0) {
-                snakeCell.classList.add("head")
-            }
                 snakeCell.classList.add('snake-cell');
         }
     };
