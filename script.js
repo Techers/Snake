@@ -135,7 +135,7 @@ function Game() {
         },
         speed);
         this._foodCreator();
-        //this.wallsTimer = setInterval (this._wallCreator, this.WALLS_SPEED)
+        this.wallsTimer = setInterval (this._wallCreator, this.WALLS_SPEED)
     };
 
     this._createGameField = function () {
